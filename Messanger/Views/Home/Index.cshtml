@@ -1,0 +1,63 @@
+﻿@model Messanger.Models.RegAndLogModel
+@{
+    ViewBag.Title = "Login & Signup";
+}
+
+<body class="font">
+<div class="login-sign-container">
+    <div class="login-sign-box"></div>
+    <div class="login-sign-container-forms">
+      <div class="login-sign-container-info">
+        <div class="login-sign-info-item">
+          <div class="login-sign-table">
+            <div class="login-sign-table-cell">
+              <p> У вас є обліковий запис? </p>
+              <div class="login-sign-btn" style="width: 100px">
+                Увійти
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="login-sign-info-item">
+          <div class="login-sign-table">
+            <div class="login-sign-table-cell">
+              <p>
+                Немає облікового запису?
+              </p>
+              <div class="login-sign-btn" style="width: 160px">
+                Зареєструватися
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="login-sign-container-form">
+        <div class="login-sign-form-item log-in">
+          <div class="login-sign-table">
+            <form class="login-sign-table-cell log-in" role="form"  asp-action="Login" asp-controller="Authorization" method="post">
+              <input asp-for="@Model.login.email" name="email" placeholder="Email" type="text" autocomplete="off" />
+              <span id="log-in-error-email" class="text-danger"></span>
+              <input asp-for="@Model.login.password" name="password" type="Password" placeholder="Password"/>
+              <span id="log-in-error-password" class="text-danger">@TempData["ErrorMessage1"]</span>
+              <input type="submit" value="Увійти" class="login-sign-btn" style="width: 160px"/>
+            </form>
+          </div>
+        </div>
+        <div class="login-sign-form-item sign-up">
+          <div class="login-sign-table">
+            <form class="login-sign-table-cell sign-up" role="form" asp-action="Register" asp-controller="Authorization" method="post">
+              <input asp-for="@Model.register.name" name="name" type="text" autocomplete="off" placeholder="Username"/>
+              <span id="sign-up-error-name" class="text-danger"></span>
+              <input asp-for="@Model.register.email" name="email" type="text" autocomplete="off" placeholder="Email"/>
+              <span id="sign-up-error-email" class="text-danger">@TempData["ErrorMessage2"]</span>
+              <input asp-for="@Model.register.password" name="password" type="password" autocomplete="off" placeholder="Password"/>
+              <span id="sign-up-error-password" class="text-danger"></span>
+              <input type="submit" value="Зареєструватися" class="login-sign-btn" style="width: 160px"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>

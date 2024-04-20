@@ -1,0 +1,27 @@
+@model System.Collections.Generic.List<Messanger.Models.UserModel>
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<div style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: linear-gradient(#012626, #091e1e, #100f0f, #02181c, #012626);">  
+    <div class="allbuttonbody" style="display: flex;  flex-direction: row;"> 
+        <div class="buttomcont" style=" justify-content: center;align-items: center; width: 50%;height: 50%; background: none; border: none; margin-top: 100px; margin-left: 100px">
+            @using (Html.BeginForm("CreateChat", "Db"))
+            {
+                <button style=" background: none; border: none; width: 100%; height: 100%;">
+                    <button class="buttonroom" type="submit">Створити чат</button>
+                </button>
+            }
+        </div>
+        <div class="buttomcont" style="justify-content: center;align-items: center;width: 50%; height: 50%;background: none; border: none;">
+            @using (Html.BeginForm("ConnectToChat", "Db"))
+            {
+                <div style=" background: none; border: none; width: 100%; height: 100%;margin-left: -20px">
+                    <input type="number" name="chatId" value="" style="width: 400px; height: 30px; border: none;text-align: center;font-size: 20px; margin-top: 15%;margin-left: 100px"/>
+                    <button class="buttonroom" type="submit">Приєднатися до чату</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
