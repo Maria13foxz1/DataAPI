@@ -48,6 +48,14 @@
               "target": "Package",
               "version": "[9.0.0-preview.3.24172.4, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Newtonsoft.Json.Schema": {
+              "target": "Package",
+              "version": "[4.0.2-beta1, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -55,6 +63,22 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[9.0.0-preview.3, )"
+            },
+            "System.Data.SQLite": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.119, )"
+            },
+            "System.Data.SQLite.EF6": {
+              "target": "Package",
+              "version": "[1.0.118, )"
+            },
+            "System.Data.SQLite.Linq": {
+              "target": "Package",
+              "version": "[1.0.118, )"
             }
           },
           "imports": [

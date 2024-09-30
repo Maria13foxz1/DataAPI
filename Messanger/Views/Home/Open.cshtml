@@ -1,0 +1,35 @@
+﻿@model List<Messanger.Models.NameInfoModel>
+@{
+    ViewData["База даних"] = "Privacy Policy";
+}
+<h1>@ViewData["База даних"]</h1>
+
+@{
+    <div class="container mt-5">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="color: white">ID</th>
+                <th style="color: white">Name</th>
+                <th style="color: white">Gender</th>
+                <th style="color: white">Gender Probability</th>
+                <th style="color: white">Age</th>
+                <th style="color: white">Nationality Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in @Model)
+            {
+                <tr>
+                    <td style="color: white">@item.Id</td>
+                    <td style="color: white">@item.Name</td>
+                    <td style="color: white">@item.Gender</td>
+                    <td style="color: white">@item.GenderProbability</td>
+                    <td style="color: white">@item.Age</td>
+                    <td style="color: white">@item.NationalityData</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

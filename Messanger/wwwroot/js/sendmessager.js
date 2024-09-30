@@ -82,7 +82,7 @@ async function fetchChatMessages(chatId) {
 
             // Відобразіть повідомлення з ім'ям користувача
             $("#chat-messages").append(
-                `<span style='color:black;'>${formattedTime} ${userName}: ${message.content}</span><br>`
+                `<span style='color:white;'>${userName}: ${message.content}</span><br>`
             );
         }
     } catch (err) {

@@ -1,4 +1,4 @@
-using Messanger.Hubs;
+
 using Messanger.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +13,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddHttpClient();
         builder.Services.AddSession();
         builder.Services.AddSignalR();
         
@@ -47,7 +48,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         
-        app.MapHub<ChatHub>("/Home/Chat/chat");
+
         app.UseRouting();
 
         app.UseAuthorization();

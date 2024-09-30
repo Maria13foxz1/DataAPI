@@ -18,12 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Univercity\Комп'ютерні мережі\Messanger\Messanger
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Univercity/Комп'ютерні мережі/Messanger/Messanger/Views/Home/Chat.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGF0LmNzaHRtbA==
+[D:/Univercity/Комп'ютерні мережі/Messanger/Messanger/Views/Db/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Univercity/Комп'ютерні мережі/Messanger/Messanger/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Univercity/Комп'ютерні мережі/Messanger/Messanger/Views/Home/Open.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcGVuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Univercity/Комп'ютерні мережі/Messanger/Messanger/Views/Home/Privacy.cshtml]

@@ -3,17 +3,20 @@ using Microsoft.AspNetCore.Mvc;
 using Messanger.Models;
 using Messanger.Models.Context;
 
+
 namespace Messanger.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly MessangerDbContext _context;
+    private readonly HttpClient _httpClient;
 
-    public HomeController(ILogger<HomeController> logger, MessangerDbContext context)
+    public HomeController(ILogger<HomeController> logger, MessangerDbContext? context, HttpClient httpClient)
     {
         _logger = logger;
         _context = context;
+        _httpClient = httpClient;
     }
 
     public IActionResult Index()
@@ -28,7 +31,8 @@ public class HomeController : Controller
 
     public IActionResult Users()
     {
-        var dbController = new DbController(_context);
+        var dbController = new DbController(_context, _httpClient);
+        
         var users = dbController.GetAllUsers();
         return View(users);
     }
@@ -39,7 +43,7 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
-    public IActionResult Chat()
+    public IActionResult Open()
     {
         return View();
     }

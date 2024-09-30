@@ -10,16 +10,18 @@ namespace Messanger.Controllers;
 public class AuthorizationController:Controller
 {
     private MessangerDbContext _context;
+    private readonly HttpClient _httpClient;
 
-    public AuthorizationController(MessangerDbContext context)
+    public AuthorizationController(MessangerDbContext context, HttpClient httpClient)
     {
         _context = context;
+        _httpClient = httpClient;
     }
     [HttpPost("Register")]
-public async Task<ActionResult> Register(RegisterModel model)
+    public async Task<ActionResult> Register(RegisterModel model)
     {
         var tempModel = new RegAndLogModel() { register = model };
-        DbController dbController = new DbController(_context);
+        DbController dbController = new DbController(_context, _httpClient);
         LoginModel? login = new LoginModel(); 
         if (ModelState.IsValid)
         {
@@ -56,7 +58,7 @@ public async Task<ActionResult> Register(RegisterModel model)
     public async Task<IActionResult> Login(LoginModel model)
     {
         var tempModel = new RegAndLogModel() { login = model };
-        var dbController = new DbController(_context);
+        var dbController = new DbController(_context, _httpClient);
         if (ModelState.IsValid)
         {
             var userDetails =
